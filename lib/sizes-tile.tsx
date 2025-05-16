@@ -5,7 +5,7 @@ interface SizesTileProps {
   productId: string;
 }
 
- export const SizesTile = (props: SizesTileProps) => {
+export const SizesTile = (props: SizesTileProps) => {
   const { productId } = props;
   const productInfo = useProductInfo(productId);
 
