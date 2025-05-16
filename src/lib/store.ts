@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { createStore, useStore as useZustandStore } from "zustand";
-import { PreloadedStoreInterface } from "./StoreProvider";
+import { PreloadedStoreInterface } from "./store-provider";
 
 export interface StoreInterface {
   lastUpdate: number;

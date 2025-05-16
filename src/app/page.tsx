@@ -1,11 +1,9 @@
-import Clock from "../components/clock";
-import Counter from "../components/counter";
+"use client"
+
 
 export default function Page() {
   return (
-    <>
-      <Clock />
-      <Counter />
-    </>
+    <div className="flex flex-col items-center justify-center min-h-screen p-24">
+    </div>
   );
 }

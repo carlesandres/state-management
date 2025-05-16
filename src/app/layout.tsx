@@ -1,4 +1,4 @@
-import StoreProvider from "@/lib/StoreProvider";
+import StoreProvider from "@/lib/store-provider";
 
 export default function RootLayout({
   children,
