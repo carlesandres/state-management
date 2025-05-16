@@ -11,7 +11,7 @@ const ProductImageryTile = (props: ProductImageryTileProps) => {
   const productInfo = useProductInfo(productId);
 
   return (
-    <div>
+    <div className="bg-gray-50 p-4 rounded-lg shadow-md">
       <ProductImagery images={productInfo.images} />
     </div>
   );

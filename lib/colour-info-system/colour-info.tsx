@@ -8,10 +8,12 @@ const ColourInfo = (props: ColourInfoProps) => {
   return (
     <div>
       <h2>Colour Information</h2>
-      <ul>
-        {colours.map((colour, index) => (
-          <li key={index} style={{ color: colour }}>
+      <ul className="flex gap-4">
+        {colours.map((colour) => (
+          <li key={colour}>
+            <button>
             {colour}
+            </button>
           </li>
         ))}
       </ul>

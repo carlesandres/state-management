@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+h2 {
+  @apply text-lg font-semibold text-gray-800 mb-4;
+}
+
+button {
+  @apply border p-2 min-w-[70px];
+}
