@@ -9,6 +9,7 @@ interface ColourInfoTileProps {
 const ColourInfoTile = (props: ColourInfoTileProps) => {
   const productInfo = useProductInfo(props.productId);
   const updateColour = useStore((state) => state.setColour);
+  const selectedColour = useStore((state) => state.colour);
 
   const handleColourSelected = (colour: string) => {
     updateColour(colour);
@@ -22,6 +23,7 @@ const ColourInfoTile = (props: ColourInfoTileProps) => {
     <div className="bg-gray-50 p-4 rounded-lg shadow-md">
       <ColourInfo
         colours={productInfo.colours}
+        selectedColour={selectedColour}
         onSelect={handleColourSelected}
       />
     </div>
