@@ -12,7 +12,10 @@ const ColourInfoTile = (props: ColourInfoTileProps) => {
   const selectedColour = useStore((state) => state.colour);
 
   const handleColourSelected = (colour: string) => {
-    updateColour(colour);
+    // TODO: Fix store initialization to avoid this check
+    if (updateColour) {
+      updateColour(colour);
+    }
   }
 
   if (!productInfo) {

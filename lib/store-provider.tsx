@@ -5,7 +5,7 @@ import type { StoreInterface, StoreType } from "./store";
 import { initializeStore, Provider } from "./store";
 
 export interface PreloadedStoreInterface
-  extends Pick<StoreInterface, "lastUpdate"> {}
+  extends StoreInterface {}
 
 export default function StoreProvider({
   children,

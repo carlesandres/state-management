@@ -4,7 +4,7 @@ import { PreloadedStoreInterface } from "./store-provider";
 
 export interface StoreInterface {
   colour: string;
-  setColour: (colour: string) => void;
+  setColour?: (colour: string) => void;
 }
 
 function getDefaultInitialState() {

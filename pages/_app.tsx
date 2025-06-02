@@ -8,7 +8,7 @@ const queryClient = new QueryClient()
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <StoreProvider lastUpdate={new Date().getTime()}>
+      <StoreProvider colour="defaultColour">
         <Component {...pageProps} />
       </StoreProvider>
     </QueryClientProvider>
