@@ -3,21 +3,14 @@ import { createStore, useStore as useZustandStore } from "zustand";
 import { PreloadedStoreInterface } from "./store-provider";
 
 export interface StoreInterface {
-  lastUpdate: number;
-  light: boolean;
-  count: number;
-  tick: (lastUpdate: number) => void;
-  increment: () => void;
-  decrement: () => void;
-  reset: () => void;
+  colour: string;
+  setColour: (colour: string) => void;
 }
 
 function getDefaultInitialState() {
   return {
-    lastUpdate: new Date(1970, 1, 1).getTime(),
-    light: false,
-    count: 0,
-  } as const;
+    colour: "defaultColour",
+  };
 }
 
 export type StoreType = ReturnType<typeof initializeStore>;
@@ -38,22 +31,11 @@ export function initializeStore(preloadedState: PreloadedStoreInterface) {
   return createStore<StoreInterface>((set, get) => ({
     ...getDefaultInitialState(),
     ...preloadedState,
-    tick: (lastUpdate) =>
-      set({
-        lastUpdate,
-        light: !get().light,
-      }),
-    increment: () =>
-      set({
-        count: get().count + 1,
-      }),
-    decrement: () =>
-      set({
-        count: get().count - 1,
-      }),
-    reset: () =>
-      set({
-        count: getDefaultInitialState().count,
-      }),
+    setColour: (colour: string) => {
+      set((state) => ({
+        ...state,
+        colour,
+      }));
+    },
   }));
 }

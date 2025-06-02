@@ -1,5 +1,6 @@
 import ColourInfo from "./colour-info-system/colour-info";
 import { useProductInfo } from "./hooks/use-product-info";
+import { useStore } from "./store";
 
 interface ColourInfoTileProps {
   productId: string
@@ -7,6 +8,11 @@ interface ColourInfoTileProps {
 
 const ColourInfoTile = (props: ColourInfoTileProps) => {
   const productInfo = useProductInfo(props.productId);
+  const updateColour = useStore((state) => state.setColour);
+
+  const handleColourSelected = (colour: string) => {
+    updateColour(colour);
+  }
 
   if (!productInfo) {
     return <div className="p-4 text-gray-500">Loading product information...</div>;
@@ -16,6 +22,7 @@ const ColourInfoTile = (props: ColourInfoTileProps) => {
     <div className="bg-gray-50 p-4 rounded-lg shadow-md">
       <ColourInfo
         colours={productInfo.colours}
+        onSelect={handleColourSelected}
       />
     </div>
   );

@@ -1,5 +1,6 @@
 interface ColourInfoProps {
   colours: string[];
+  onSelect: (colour: string) => void;
 }
 
 const ColourInfo = (props: ColourInfoProps) => {
@@ -11,7 +12,7 @@ const ColourInfo = (props: ColourInfoProps) => {
       <ul className="flex gap-4">
         {colours.map((colour) => (
           <li key={colour}>
-            <button>
+            <button onClick={() => props.onSelect(colour)} className="p-2 border rounded hover:bg-gray-200">
             {colour}
             </button>
           </li>
