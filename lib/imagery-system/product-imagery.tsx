@@ -11,7 +11,10 @@ export const ProductImagery = (props: ProductImageryProps) => {
   return (
     <div>
       <h2>Product Imagery</h2>
-      <p>{`Selected Colour: ${selectedColour}`}</p>
+      <p 
+        style={{ backgroundColor: selectedColour.toLowerCase() }}
+        className="p-2 mb-4 rounded text-white"
+      >{`Selected Colour: ${selectedColour}`}</p>
       <div className="flex flex-col gap-4">
         {props.images.map((image, index) => (
           <img
