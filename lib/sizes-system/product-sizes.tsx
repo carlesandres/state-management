@@ -1,4 +1,4 @@
-import { ProductInfo } from "../hooks/use-product-info";
+import { ProductInfo } from "@/pages/api/product";
 
 interface ProductSizesProps {
   sizes: ProductInfo["sizes"];

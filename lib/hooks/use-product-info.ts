@@ -1,37 +1,12 @@
-export type ProductImage = {
-  src: string;
-  alt: string;
-};
+import { ProductInfo } from "@/pages/api/product";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProductInfo } from "../utils/fetch-product-info";
 
-export type ProductInfo = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  colours: string[];
-  sizes: string[];
-  images: ProductImage[];
-};
+export const useProductInfo = (prodId: string): ProductInfo | null => {
+  const prodInfo = useQuery({
+    queryKey: ['productInfo', prodId],
+      queryFn: ({ queryKey }) => fetchProductInfo(queryKey[1])
+  });
 
-export const useProductInfo = (prodId: string): ProductInfo => {
-  const productInfo:ProductInfo = {
-    id: prodId,
-    name: "Product Name",
-    description: "This is a sample product description.",
-    price: 29.99,
-    colours: ["Red", "Green", "Blue"],
-    sizes: ["S", "M", "L", "XL"],
-    images: [
-      {
-        src: "https://picsum.photos/200/300",
-        alt: "Image 1",
-      },
-      {
-        src: "https://picsum.photos/200/300",
-        alt: "Image 2",
-      },
-    ],
-  };
-
-  return productInfo;
+  return prodInfo.data || null;
 }

@@ -10,6 +10,10 @@ const ProductImageryTile = (props: ProductImageryTileProps) => {
   const { productId } = props;
   const productInfo = useProductInfo(productId);
 
+  if (!productInfo) {
+    return <div className="p-4 text-gray-500">Loading product information...</div>;
+  }
+
   return (
     <div className="bg-gray-50 p-4 rounded-lg shadow-md">
       <ProductImagery images={productInfo.images} />

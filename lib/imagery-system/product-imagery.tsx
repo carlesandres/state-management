@@ -1,4 +1,4 @@
-import { ProductImage } from "../hooks/use-product-info";
+import { ProductImage } from "@/pages/api/product";
 
 interface ProductImageryProps {
   images: ProductImage[];

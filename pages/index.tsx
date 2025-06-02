@@ -1,5 +1,3 @@
-"use client"
-
 import ColourInfoTile from "@/lib/colour-info-tile";
 import ProductImageryTile from "@/lib/product-imagery-tile";
 import { SizesTile } from "@/lib/sizes-tile";
