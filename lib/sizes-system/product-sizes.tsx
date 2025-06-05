@@ -9,7 +9,7 @@ export const ProductSizes = (props: ProductSizesProps) => {
     <div>
       <h2>Available Sizes</h2>
       <ul className="flex gap-2">
-        {props.sizes.map((size, index) => (
+        {props.sizes.map((size) => (
           <li key={size}>
             <button>
               {size}
