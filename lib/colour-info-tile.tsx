@@ -23,7 +23,7 @@ const ColourInfoTile = (props: ColourInfoTileProps) => {
   }
 
   return (
-    <div className="bg-gray-50 p-4 rounded-lg shadow-md">
+    <div className="tile colour-info-tile">
       <ColourInfo
         colours={productInfo.colours}
         selectedColour={selectedColour}

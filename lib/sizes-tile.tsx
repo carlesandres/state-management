@@ -14,7 +14,7 @@ export const SizesTile = (props: SizesTileProps) => {
   }
 
   return (
-    <div className="bg-gray-50 p-4 rounded-lg shadow-md">
+    <div className="tile sizes-tile">
       <ProductSizes sizes={productInfo.sizes} />
     </div>
   );

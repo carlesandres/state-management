@@ -3,6 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export type ProductImage = {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 };
 
 export type ProductInfo = {
@@ -35,12 +37,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     sizes: ["S", "M", "L", "XL"],
     images: [
       {
-        src: "https://picsum.photos/200/300",
+        src: "https://picsum.photos/800/400",
         alt: "Image 1",
+        width: 800,
+        height: 400,
       },
       {
-        src: "https://picsum.photos/200/300",
+        src: "https://picsum.photos/800/400",
         alt: "Image 2",
+        width: 800,
+        height: 400,
       },
     ],
   };

@@ -8,7 +8,7 @@ export default function Page() {
 
   return (
     <main className="max-w-7xl mx-auto min-h-screen p-24">
-      <h1 className="text-2xl font-semibold">Product Details</h1>
+      <h1 className="text-2xl font-semibold mb-4">Product Details</h1>
       <div className="flex gap-4">
 
         <div className="w-2/3">

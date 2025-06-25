@@ -1,3 +1,5 @@
+import { twMerge } from 'tailwind-merge'
+
 interface ColourInfoProps {
   colours: string[];
   selectedColour: string;
@@ -19,7 +21,7 @@ const ColourInfo = (props: ColourInfoProps) => {
 
           return (
           <li key={colour}>
-            <button onClick={() => props.onSelect(colour)} className={className}>
+            <button onClick={() => props.onSelect(colour)} className={twMerge('btn', className)}>
             {colour}
             </button>
           </li>

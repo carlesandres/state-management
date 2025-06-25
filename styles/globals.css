@@ -7,3 +7,7 @@ h2 {
 button {
   @apply border p-2 min-w-[70px];
 }
+
+.tile {
+  @apply bg-gray-50 p-4 rounded-lg shadow-md;
+}

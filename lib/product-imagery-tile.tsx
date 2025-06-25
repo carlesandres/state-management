@@ -17,7 +17,7 @@ const ProductImageryTile = (props: ProductImageryTileProps) => {
   }
 
   return (
-    <div className="bg-gray-50 p-4 rounded-lg shadow-md">
+    <div className="tile product-imagery-tile">
       <ProductImagery images={productInfo.images} colour={colour} />
     </div>
   );
