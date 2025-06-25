@@ -4,13 +4,10 @@ import { type PropsWithChildren, useRef } from "react";
 import type { StoreInterface, StoreType } from "./store";
 import { initializeStore, Provider } from "./store";
 
-export interface PreloadedStoreInterface
-  extends StoreInterface {}
-
 export default function StoreProvider({
   children,
   ...props
-}: PropsWithChildren<PreloadedStoreInterface>) {
+}: PropsWithChildren<StoreInterface>) {
   const storeRef = useRef<StoreType>();
 
   if (!storeRef.current) {

@@ -27,7 +27,12 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@tailwindcss/oxide"
+      "@tailwindcss/oxide",
+      "unrs-resolver"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "eslint-config-next": "15.3.4"
   }
 }

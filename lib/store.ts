@@ -1,6 +1,5 @@
 import { createContext, useContext } from "react";
 import { createStore, useStore as useZustandStore } from "zustand";
-import { PreloadedStoreInterface } from "./store-provider";
 
 export interface StoreInterface {
   colour: string;
@@ -27,8 +26,8 @@ export function useStore<T>(selector: (state: StoreInterface) => T) {
   return useZustandStore(store, selector);
 }
 
-export function initializeStore(preloadedState: PreloadedStoreInterface) {
-  return createStore<StoreInterface>((set, get) => ({
+export function initializeStore(preloadedState: StoreInterface) {
+  return createStore<StoreInterface>((set) => ({ 
     ...getDefaultInitialState(),
     ...preloadedState,
     setColour: (colour: string) => {
