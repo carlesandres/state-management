@@ -4,6 +4,8 @@ import { createStore, useStore as useZustandStore } from "zustand";
 export interface StoreInterface {
   colour: string;
   setColour?: (colour: string) => void;
+  size?: string;
+  setSize?: (size: string) => void;
 }
 
 function getDefaultInitialState() {
@@ -34,6 +36,12 @@ export function initializeStore(preloadedState: StoreInterface) {
       set((state) => ({
         ...state,
         colour,
+      }));
+    },
+    setSize: (size: string) => {
+      set((state) => ({
+        ...state,
+        size,
       }));
     },
   }));

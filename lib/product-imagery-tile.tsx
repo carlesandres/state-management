@@ -10,7 +10,7 @@ interface ProductImageryTileProps {
 const ProductImageryTile = (props: ProductImageryTileProps) => {
   const { productId } = props;
   const productInfo = useProductInfo(productId);
-  const colour = useStore((state) => state.colour);
+  const { colour, size }  = useStore(state => state)
 
   if (!productInfo) {
     return <div className="p-4 text-gray-500">Loading product information...</div>;
@@ -18,7 +18,7 @@ const ProductImageryTile = (props: ProductImageryTileProps) => {
 
   return (
     <div className="tile product-imagery-tile">
-      <ProductImagery images={productInfo.images} colour={colour} />
+      <ProductImagery images={productInfo.images} colour={colour} size={size} />
     </div>
   );
 };

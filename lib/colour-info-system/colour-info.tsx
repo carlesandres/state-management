@@ -14,9 +14,9 @@ const ColourInfo = (props: ColourInfoProps) => {
       <h2>Colour Information</h2>
       <ul className="flex gap-4">
         {colours.map((colour) => {
-          let className = "p-2 border rounded hover:bg-gray-200";
+          let className = "";
           if (colour === props.selectedColour) {
-            className += " bg-blue-100 border-blue-500";
+            className = "bg-blue-100 border-blue-500";
           }
 
           return (

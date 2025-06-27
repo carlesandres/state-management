@@ -5,9 +5,9 @@ h2 {
 }
 
 button {
-  @apply border p-2 min-w-[70px];
+  @apply border bg-white p-2 min-w-[70px] rounded hover:bg-gray-200 cursor-pointer transition;
 }
 
 .tile {
-  @apply bg-gray-50 p-4 rounded-lg shadow-md;
+  @apply bg-gray-100 p-4 rounded-lg shadow-md;
 }
